@@ -91,6 +91,12 @@
     animation: animate 6s infinite;
 }
 
+.ri-linkedin-line,
+.ri-instagram-line {
+    text-decoration: none;
+    color: #fff
+}
+
 @keyframes animate {
     0% {
         left: 0;
