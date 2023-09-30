@@ -294,20 +294,52 @@ tl4.from("#contact-page", {
 }, "contact-page-anim")
 
 var company_names = document.querySelectorAll(".company-names");
+var company_work_data = document.querySelectorAll(".work-data");
 var nokia = document.querySelector(".company-nokia")
 var ericsson = document.querySelector(".company-ericsson")
 
+company_work_data.forEach(function(work_data) {
+    work_data.addEventListener("mouseenter", function(){
+        var company_name = work_data.getAttribute("company-name")
+        cursor.style.height = "10vh"
+        cursor.style.width = "20vh"
+        cursor.style.display = "flex"
+        cursor.style.alignItems = "center"
+        cursor.style.justifyContent = "center"
+        cursor.style.color = "#fff"
+        cursor.style.borderRadius = "0"
+        cursor.style.textTransform = "uppercase"
+        cursor.innerHTML = company_name
+    })
+    work_data.addEventListener("mouseleave", function() {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.textTransform = "None"
+        cursor.style.borderRadius = "50%"
+        cursor.innerHTML = ""
+    })
+})
+
 function hide_other_company() {
-    var company_names = document.querySelectorAll(".work-data");
-    company_names.forEach(function(company) {
-        company.style.display = "none"
+    var company_work_data = document.querySelectorAll(".work-data");
+    company_work_data.forEach(function(work_data) {
+        work_data.style.display = "none"
+    })
+}
+
+function update_company_name_hightlight() {
+    var company_names = document.querySelectorAll(".company-names");
+    company_names.forEach(function(company_name) {
+        company_name.style.color = "#000"
     })
 }
 
 company_names.forEach(function(company) {
     company.addEventListener("click", function() {
         hide_other_company()
+        update_company_name_hightlight()
         var company_tag = document.querySelector(company.getAttribute("company"))
         company_tag.style.display = "block"
+        this.style.color = "#C38D9E"
     })
 })
