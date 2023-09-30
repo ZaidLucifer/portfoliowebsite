@@ -370,14 +370,14 @@
 
 .position {
     position: absolute;
-    top: 6.5vh;
+    top: 6.8vh;
     left: 50vh;
     width: 68vw;
     display: flex;
     justify-content: center;
     letter-spacing: 0.4rem;
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #000;
     background-color: #fff;
     z-index: 5;
@@ -385,19 +385,20 @@
 
 .project-name {
     position: absolute;
-    left: 20vh;
+    left: 18vh;
     bottom: 0;
     width: 10vw;
     display: flex;
     justify-content: center;
-    letter-spacing: 1rem;
-    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 2.5rem;
     color: #000;
     background-color: #fff;
 }
 
 .responsibilities {
-    height: 62vh;
+    height: 64vh;
     margin-left: 7.5vw;
     width: 80vw;
     display: flex;

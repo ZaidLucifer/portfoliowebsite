@@ -292,3 +292,22 @@ tl4.to(".skill-duration", {
 tl4.from("#contact-page", {
     backgroundColor: "#000"
 }, "contact-page-anim")
+
+var company_names = document.querySelectorAll(".company-names");
+var nokia = document.querySelector(".company-nokia")
+var ericsson = document.querySelector(".company-ericsson")
+
+function hide_other_company() {
+    var company_names = document.querySelectorAll(".work-data");
+    company_names.forEach(function(company) {
+        company.style.display = "none"
+    })
+}
+
+company_names.forEach(function(company) {
+    company.addEventListener("click", function() {
+        hide_other_company()
+        var company_tag = document.querySelector(company.getAttribute("company"))
+        company_tag.style.display = "block"
+    })
+})
