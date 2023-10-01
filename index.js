@@ -298,9 +298,16 @@ var nokia = document.querySelector(".company-nokia")
 var ericsson = document.querySelector(".company-ericsson")
 
 function hide_other_company() {
-    var company_names = document.querySelectorAll(".work-data");
+    var work_datas = document.querySelectorAll(".work-data");
+    work_datas.forEach(function(work_data) {
+        work_data.style.display = "none"
+    })
+}
+
+function update_text_color_for_other_company_name() {
+    var company_names = document.querySelectorAll(".company-names");
     company_names.forEach(function(company) {
-        company.style.display = "none"
+        company.style.color = "#000"
     })
 }
 
@@ -309,6 +316,8 @@ company_names.forEach(function(company) {
         hide_other_company()
         var company_tag = document.querySelector(company.getAttribute("company"))
         company_tag.style.display = "block"
+        update_text_color_for_other_company_name()
+        this.style.color = "#C38D9E"
     })
 })
 
