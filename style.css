@@ -133,193 +133,126 @@
     height: 100vh;
     width: 100vw;
     position: relative;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 3;
-    background-color: #000000cc;
-}
-
-#image {
-    height: 100vh;
-    width: 100vw;
-}
-
-#image>img {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-}
-
-#intro-detail {
-    position: absolute;
-    top: 50%;
-    left: -50vh;
-}
-
-#intro-circle {
-    position: relative;
-    height: 90vh;
-    width: 90vh;
-    transform: translate(0, -50%) rotate(-100deg);
-    border-radius: 50%;
-    z-index: 4;
-    border: 1px dashed #fff;
-}
-
-.circle-content {
     display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-transform: capitalize;
-    letter-spacing: 0.2rem;
-    transform: translate(0, -50%);
-    width: 100%;
-    height: 10vh;
-    transform-origin: 0% 50%;
+}
+
+.about-me-left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
+    background-color: #030000;
 }
 
-.circle-content:hover {
-    cursor: default;
+.about-me-name h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 0.4rem;
 }
 
-.circle-content h2 {
+.about-me-left h3 {
+    margin-top: 2vh;
     font-size: 2rem;
+    letter-spacing: 0.4rem;
 }
 
-.circle-content h4 {
+.about-me-right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    padding-top: 8vh;
+}
+
+.about-me-scroll {
+    display: flex;
+    width: 33.33%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.about-me-scroller {
+    width: 100%;
+    border-left: 0.5vw solid #000;
+}
+
+.scroll-div {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    color: #000;
+    border: 0.5vw solid #000;
+    background-color: #fff;
+}
+
+.scroll-div h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+}
+
+.scroll-div h4 {
+    text-transform: uppercase;
     font-size: 1rem;
 }
 
-.circle-content-1 {
-    transform: translate(0, -50%) rotate(-48deg);
+.about-me-scroller-1 {
+    animation: scroll 10s linear infinite;
 }
 
-.circle-content-2 {
-    transform: translate(0, -50%) rotate(-36deg);
+.about-me-scroller-2 {
+    animation: scroll_reverse 10s linear infinite;
 }
 
-.circle-content-3 {
-    transform: translate(0, -50%) rotate(-24deg);
+.about-me-scroller-3 {
+    animation: scroll 15s linear infinite;
 }
 
-.circle-content-4 {
-    transform: translate(0, -50%) rotate(-12deg);
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
 }
 
-.circle-content-6 {
-    transform: translate(0, -50%) rotate(12deg);
+@keyframes scroll_reverse {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
-.circle-content-7 {
-    transform: translate(0, -50%) rotate(24deg);
-}
-
-.circle-content-8 {
-    transform: translate(0, -50%) rotate(36deg);
-}
-
-.circle-content-9 {
-    transform: translate(0, -50%) rotate(48deg);
-}
-
-.circle-content .right {
-    opacity: 0.5;
-    width: 50%;
-    height: 100%;
-    padding-left: 1.5vw;
-}
-
-.circle-content .left {
-    width: 50%;
-    height: 100%;
-}
-
-.circle-content-dot {
+.about-me-image {
     position: absolute;
-    top: 40%;
-    right: 49.2%;
-    height: 0.5vw;
-    width: 0.5vw;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.5;
-}
-
-#circle-control {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    right: 3%;
-    top: 50%;
-    transform: translate(0, -50%);
+    width: 30vh;
     height: 30vh;
-    width: 2vw;
-    z-index: 4;
-}
-
-#circle-control .controls {
-    width: 1vw;
-    height: 1vw;
+    bottom: 5vh;
+    left: 45vw;
     border-radius: 50%;
-    opacity: 0.4;
-    background-color: #fff;
+    background-image: url("IMG_20230116_160600.jpg");
+    background-size: cover;
 }
 
-
-/*========================================= Introduction Page =========================================*/
-
-#intros {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    padding: 20vh 10vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
-    z-index: 5;
+.about-me-left-center .about-me-name,
+.about-me-left-center h3 {
+    transition: color ease 1s;
 }
 
-.intro {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.intro h1 {
-    text-transform: uppercase;
-    font-size: 10rem;
-    letter-spacing: 0.5rem;
-    z-index: 10;
-}
-
-.intro h1:nth-child(1),
-.intro h1:nth-child(3) {
-    color: #000;
-    background-color: #fff;
-}
-
-.intro h1:nth-child(2) {
-    color: #fff;
-    background-color: #000;
-}
-
-.backgroud-overlay {
-    position: absolute;
-    height: 75vh;
-    width: 45vw;
+.about-me-left-center .about-me-name:hover,
+.about-me-left-center h3:hover {
+    color: #C38D9E
 }
 
 
@@ -341,7 +274,7 @@
     bottom: 0;
     height: 12vh;
     width: 100%;
-    border-top: 2px solid #000;
+    border-top: 1px solid #000;
     overflow: hidden;
 }
 
@@ -366,12 +299,13 @@
 .duration {
     position: absolute;
     top: 0;
-    font-size: 2rem;
+    font-size: 2vmax;
     letter-spacing: 0.4rem;
     font-size: 500;
     text-transform: uppercase;
-    height: 10vh;
+    height: 10vmax;
     color: #000;
+    z-index: 6;
 }
 
 .position {
@@ -383,7 +317,7 @@
     justify-content: center;
     letter-spacing: 0.4rem;
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 3.3vmax;
     color: #000;
     background-color: #fff;
     z-index: 5;
@@ -391,14 +325,14 @@
 
 .project-name {
     position: absolute;
-    left: 18vh;
-    bottom: 0;
+    left: 15vh;
+    bottom: 2vh;
     width: 10vw;
     display: flex;
     justify-content: center;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    font-size: 2.5rem;
+    font-size: 2.5vmax;
     color: #000;
     background-color: #fff;
 }
@@ -457,10 +391,6 @@
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     color: #000;
-}
-
-.company-names:nth-child(1) {
-    color: #C38D9E;
 }
 
 .company-names:hover {

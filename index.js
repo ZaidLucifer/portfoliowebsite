@@ -48,14 +48,14 @@ animate_cursor()
 gsap.from(".navbar-item", {
     y: -50
 }, "navbar-anim")
-gsap.from(".intro-content-1", {
-    x: -50
+gsap.from(".about-me-name", {
+    opacity: 0
 }, "navbar-anim")
-gsap.from(".intro-content-2", {
-    x: 50
+gsap.from(".about-me-left-center h3", {
+    opacity: 0
 }, "navbar-anim")
-gsap.from(".intro-content-3", {
-    x: -50
+gsap.from(".about-me-image", {
+    y: 500
 }, "navbar-anim")
 
 var tl0 = gsap.timeline({
@@ -294,52 +294,114 @@ tl4.from("#contact-page", {
 }, "contact-page-anim")
 
 var company_names = document.querySelectorAll(".company-names");
-var company_work_data = document.querySelectorAll(".work-data");
 var nokia = document.querySelector(".company-nokia")
 var ericsson = document.querySelector(".company-ericsson")
 
-company_work_data.forEach(function(work_data) {
-    work_data.addEventListener("mouseenter", function(){
-        var company_name = work_data.getAttribute("company-name")
-        cursor.style.height = "10vh"
-        cursor.style.width = "20vh"
-        cursor.style.display = "flex"
-        cursor.style.alignItems = "center"
-        cursor.style.justifyContent = "center"
-        cursor.style.color = "#fff"
-        cursor.style.borderRadius = "0"
-        cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = company_name
-    })
-    work_data.addEventListener("mouseleave", function() {
-        cursor.style.height = "30px"
-        cursor.style.width = "30px"
-        cursor.style.textTransform = "None"
-        cursor.style.borderRadius = "50%"
-        cursor.innerHTML = ""
-    })
-})
-
 function hide_other_company() {
-    var company_work_data = document.querySelectorAll(".work-data");
-    company_work_data.forEach(function(work_data) {
-        work_data.style.display = "none"
-    })
-}
-
-function update_company_name_hightlight() {
-    var company_names = document.querySelectorAll(".company-names");
-    company_names.forEach(function(company_name) {
-        company_name.style.color = "#000"
+    var company_names = document.querySelectorAll(".work-data");
+    company_names.forEach(function(company) {
+        company.style.display = "none"
     })
 }
 
 company_names.forEach(function(company) {
     company.addEventListener("click", function() {
         hide_other_company()
-        update_company_name_hightlight()
         var company_tag = document.querySelector(company.getAttribute("company"))
         company_tag.style.display = "block"
-        this.style.color = "#C38D9E"
+    })
+})
+
+
+var duration = document.querySelectorAll(".duration")
+duration.forEach(function(elem) {
+    elem.addEventListener("mouseenter", function() {
+        cursor.style.width = "10vw"
+        cursor.style.height = "5vh"
+        cursor.style.display = "flex"
+        cursor.style.alignItems = "center"
+        cursor.style.justifyContent = "center"
+        cursor.style.borderRadius = "0"
+        cursor.style.fontSize = "1.2rem"
+        cursor.style.letterSpacing = "0.1rem"
+        cursor.style.color = "#fff"
+        cursor.style.textTransform = "uppercase"
+        cursor.innerHTML = "duration"
+    })
+    elem.addEventListener("mouseleave", function() {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.borderRadius = "50%"
+        cursor.innerHTML = ""
+    })
+})
+
+var position = document.querySelectorAll(".position")
+position.forEach(function(elem) {
+    elem.addEventListener("mouseenter", function() {
+        cursor.style.width = "10vw"
+        cursor.style.height = "5vh"
+        cursor.style.display = "flex"
+        cursor.style.alignItems = "center"
+        cursor.style.justifyContent = "center"
+        cursor.style.borderRadius = "0"
+        cursor.style.fontSize = "1.2rem"
+        cursor.style.letterSpacing = "0.1rem"
+        cursor.style.color = "#fff"
+        cursor.style.textTransform = "uppercase"
+        cursor.innerHTML = "position"
+    })
+    elem.addEventListener("mouseleave", function() {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.borderRadius = "50%"
+        cursor.innerHTML = ""
+    })
+})
+
+var project_name = document.querySelectorAll(".project-name")
+project_name.forEach(function(elem) {
+    elem.addEventListener("mouseenter", function() {
+        cursor.style.width = "13vw"
+        cursor.style.height = "5vh"
+        cursor.style.display = "flex"
+        cursor.style.alignItems = "center"
+        cursor.style.justifyContent = "center"
+        cursor.style.fontSize = "1.2rem"
+        cursor.style.borderRadius = "0"
+        cursor.style.letterSpacing = "0.1rem"
+        cursor.style.color = "#fff"
+        cursor.style.textTransform = "uppercase"
+        cursor.innerHTML = "project name"
+    })
+    elem.addEventListener("mouseleave", function() {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.borderRadius = "50%"
+        cursor.innerHTML = ""
+    })
+})
+
+var responsibilities = document.querySelectorAll(".responsibilities")
+responsibilities.forEach(function(elem) {
+    elem.addEventListener("mouseenter", function() {
+        var company_name = elem.getAttribute("company-name")
+        cursor.style.width = "13vw"
+        cursor.style.height = "5vh"
+        cursor.style.display = "flex"
+        cursor.style.alignItems = "center"
+        cursor.style.justifyContent = "center"
+        cursor.style.fontSize = "1.2rem"
+        cursor.style.borderRadius = "0"
+        cursor.style.letterSpacing = "0.1rem"
+        cursor.style.color = "#fff"
+        cursor.style.textTransform = "uppercase"
+        cursor.innerHTML = company_name
+    })
+    elem.addEventListener("mouseleave", function() {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.borderRadius = "50%"
+        cursor.innerHTML = ""
     })
 })
