@@ -201,9 +201,9 @@ var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: "#skills-page",
         scroller: "#main",
-        markers: true,
-        start: "top 30%",
-        end: "bottom 130%",
+        //markers: true,
+        start: "top 80%",
+        end: "bottom 120%",
         scrub: 3
     }
 })
