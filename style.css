@@ -243,8 +243,8 @@
 
 .about-me-image {
     position: absolute;
-    width: 30vh;
-    height: 30vh;
+    width: 30vmin;
+    height: 30vmin;
     bottom: 5vh;
     left: 45vw;
     border-radius: 50%;
@@ -282,6 +282,19 @@
 
     .about-me-image {
         top: 35vh;
+        left: 75vw;
+    }
+
+    .navbar-item {
+        font-size: 1.5vmin;
+    }
+}
+
+@media (max-width: 960px){
+    .about-me-image {
+        width: 20vh;
+        height: 20vh;
+        top: 40vh;
         left: 70vw;
     }
 }
