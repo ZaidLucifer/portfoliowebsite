@@ -222,6 +222,10 @@
     font-size: 1.5vmin;
 }
 
+.scroll-div h4:nth-child(2) {
+    margin-top: 0.5vmin;
+}
+
 .about-me-scroller-1 {
     animation: scroll 10s linear infinite;
 }
