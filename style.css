@@ -292,10 +292,7 @@
 
 @media (max-width: 960px){
     .about-me-image {
-        width: 20vh;
-        height: 20vh;
-        top: 40vh;
-        left: 70vw;
+        display: none;
     }
 }
 
@@ -369,7 +366,7 @@
 
 .project-name {
     position: absolute;
-    left: 15vh;
+    left: 8vw;
     bottom: 2vh;
     width: 10vw;
     display: flex;
@@ -444,6 +441,20 @@
 
 .company-names-ericsson {
     color: #C38D9E;
+}
+
+@media (max-width: 1160px){
+
+    .position {
+        left: 30vw;
+        width: 60vw;
+        font-size: 2vmin;
+    }
+
+    .project-name {
+        left: 10vw;
+        font-size: 3vmin;
+    }
 }
 
 
