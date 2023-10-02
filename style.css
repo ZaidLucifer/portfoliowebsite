@@ -56,12 +56,12 @@
 }
 
 #middle-navbar {
-    gap: 2rem;
+    gap: 2vmin;
 }
 
 #right-navbar {
     padding: 0 2vw;
-    gap: 2rem;
+    gap: 2vmin;
 }
 
 .navbar-icon {
@@ -69,7 +69,7 @@
 }
 
 .logo-letter img {
-    width: 6vw;
+    width: 12vmin;
     object-fit: cover;
 }
 
@@ -110,6 +110,17 @@
     100% {
         left: 100%;
         transform: translate(0%);
+    }
+}
+
+@media (max-width: 960px){
+
+    .navbar-item {
+        font-size: 1.5vmin;
+    }
+
+    #left-navbar {
+        width:20vw;
     }
 }
 
@@ -283,10 +294,6 @@
     .about-me-image {
         top: 35vh;
         left: 75vw;
-    }
-
-    .navbar-item {
-        font-size: 1.5vmin;
     }
 }
 
