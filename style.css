@@ -149,14 +149,14 @@
 
 .about-me-name h1 {
     text-transform: uppercase;
-    font-size: 8vh;
+    font-size: 8vmin;
     font-weight: 900;
     letter-spacing: 0.4rem;
 }
 
 .about-me-left h3 {
     margin-top: 2vh;
-    font-size: 3vh;
+    font-size: 3vmin;
     letter-spacing: 0.4rem;
 }
 
@@ -256,6 +256,30 @@
 .about-me-left-center .about-me-name:hover,
 .about-me-left-center h3:hover {
     color: #C38D9E
+}
+
+@media (max-width: 1160px){
+    #about-me {
+        flex-direction: column;
+        gap: 0
+    }
+
+    .about-me-left {
+        padding-top: 8vh;
+        height: 50vh;
+        width: 100%
+    }
+
+    .about-me-right {
+        padding-top:0;
+        height: 50vh;
+        width: 100%
+    }
+
+    .about-me-image {
+        top: 35vh;
+        left: 70vw;
+    }
 }
 
 
