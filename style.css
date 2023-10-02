@@ -10,6 +10,10 @@
     background-color: #000;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
 
 /*========================================= Nav Bar =========================================*/
 
@@ -23,7 +27,7 @@
     letter-spacing: 0.2rem;
     font-size: 2vmin;
     font-weight: 500;
-    z-index: 10;
+    z-index: 4;
     color: #fff;
     transition: color ease 1s;
     text-transform: uppercase;

@@ -1,12 +1,14 @@
-function init() {
+
     gsap.registerPlugin(ScrollTrigger);
 
     // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#main"),
-        smooth: true
+        smooth: true,
+        reloadOnContextChange: true
     });
+    
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -27,10 +29,6 @@ function init() {
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
     ScrollTrigger.refresh();
-
-}
-
-init()
 
 var cursor_doc = document.getElementById("cursor");
 var cursor = document.querySelector("#cursor")
@@ -57,51 +55,6 @@ gsap.from(".about-me-left-center h3", {
 gsap.from(".about-me-image", {
     y: 500
 }, "navbar-anim")
-
-var tl0 = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#intros",
-        scroller: "#main",
-        //markers: true,
-        start: "top top",
-        end: "bottom 30%",
-        scrub: 3
-    }
-})
-
-tl0.to(".intro-content-1", {
-    x: 100
-}, "intro-anim")
-tl0.to(".intro-content-2", {
-    x: -100
-}, "intro-anim")
-tl0.to(".intro-content-3", {
-    x: 100
-}, "intro-anim")
-tl0.to("#intro-circle", {
-    rotate: 0,
-    ease: Expo.easeInOut,
-    duration: 2
-})
-
-var tl1 = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#about-me",
-        scroller: "#main",
-        //markers: true,
-        start: "top 30%",
-        end: "bottom 60%",
-        scrub: 3
-    }
-})
-
-tl1.to("#circle-control", {
-    x: "2vw"
-}, "circle-anim")
-
-tl1.to("#intro-circle", {
-    x: "-5vw"
-}, "circle-anim")
 
 var active = 5
 var circle_controls = document.querySelectorAll("#circle-control .controls")
@@ -231,8 +184,8 @@ var tl2 = gsap.timeline({
         trigger: "#work-data",
         scroller: "#main",
         //markers: true,
-        start: "top 30%",
-        end: "bottom 110%",
+        start: "top 100%",
+        end: "bottom 170%",
         scrub: 3
     }
 })
@@ -248,9 +201,9 @@ var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: "#skills-page",
         scroller: "#main",
-        // markers: true,
-        start: "top 80%",
-        end: "bottom 120%",
+        markers: true,
+        start: "top 30%",
+        end: "bottom 130%",
         scrub: 3
     }
 })
@@ -277,7 +230,7 @@ var tl4 = gsap.timeline({
     scrollTrigger: {
         trigger: "#contact-page",
         scroller: "#main",
-        // markers: true,
+        //markers: true,
         start: "top 90%",
         end: "bottom 100%",
         scrub: 3
@@ -414,3 +367,17 @@ responsibilities.forEach(function(elem) {
         cursor.innerHTML = ""
     })
 })
+
+const anchorLinks = document.querySelectorAll('a[href^=\\#]:not([href$=\\#])');
+
+anchorLinks.forEach((anchorLink) => {
+    let hashval = anchorLink.getAttribute('href');
+    let target = document.querySelector(hashval);
+
+    anchorLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        locoScroll.scrollTo(target);
+    });
+});
