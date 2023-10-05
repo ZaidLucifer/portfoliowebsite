@@ -38,6 +38,11 @@ function animate_cursor() {
     main.addEventListener("mousemove", function(events) {
         cursor.style.left = events.x + 10 + "px"
         cursor.style.top = events.y + 10 + "px"
+        cursor.style.padding = "5px 5px"
+        cursor.style.display = "block"
+    })
+    main.addEventListener("mouseout", function(events) {
+        cursor.style.display = "none"
     })
 }
 
