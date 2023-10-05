@@ -39,7 +39,7 @@ function animate_cursor() {
         cursor.style.left = events.x + 10 + "px"
         cursor.style.top = events.y + 10 + "px"
         cursor.style.padding = "5px 5px"
-        cursor.style.display = "block"
+        cursor.style.display = "flex"
     })
     main.addEventListener("mouseout", function(events) {
         cursor.style.display = "none"
@@ -200,6 +200,12 @@ tl2.to("#work-data", {
 }, "work-data-anim")
 tl2.to(".work-data-content", {
     opacity: 1
+}, "work-data-anim")
+tl2.from(".position", {
+    x: "10vh"
+}, "work-data-anim")
+tl2.from(".project-name", {
+    x: "-10vh"
 }, "work-data-anim")
 
 var tl3 = gsap.timeline({

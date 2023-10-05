@@ -135,6 +135,8 @@
     z-index: 5;
     color: var(--dark-blue);
     font-weight: 600;
+    top: 50vh;
+    left: 50vw;
     mix-blend-mode: difference;
     transition: width ease-in-out 0.8s, height ease-in-out 0.8s, content ease 10s;
     color: white;
@@ -362,31 +364,39 @@
 
 .position {
     position: absolute;
-    top: 12vh;
-    left: 55vh;
-    width: 55vw;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 5vmin;
     display: flex;
     justify-content: center;
-    letter-spacing: 0.4rem;
+    align-items: center;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
-    font-size: 3vmin;
-    color: #000;
-    background-color: #fff;
+    font-size: 3.5vmin;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    writing-mode: vertical-rl;
+    background-color: #ffffff80;
     z-index: 5;
 }
 
 .project-name {
     position: absolute;
-    left: 8vw;
-    bottom: 2vh;
-    width: 10vw;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5vmin;
     display: flex;
     justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     font-size: 5vmin;
-    color: #000;
-    background-color: #fff;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    writing-mode: vertical-rl;
+    background-color: #ffffff80;
 }
 
 .responsibilities {
@@ -452,20 +462,6 @@
 
 .company-names-ericsson {
     color: #C38D9E;
-}
-
-@media (max-width: 1160px){
-
-    .position {
-        left: 30vw;
-        width: 60vw;
-        font-size: 2vmin;
-    }
-
-    .project-name {
-        left: 10vw;
-        font-size: 3vmin;
-    }
 }
 
 
