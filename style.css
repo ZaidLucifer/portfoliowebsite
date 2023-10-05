@@ -141,7 +141,14 @@
     transition: width ease-in-out 0.8s, height ease-in-out 0.8s, content ease 10s;
     color: white;
     background-color: #C38D9E;
+    display: flex;
     overflow: hidden;
+}
+
+@media (max-width: 650px) {
+    #cursor {
+        display: none
+    }
 }
 
 

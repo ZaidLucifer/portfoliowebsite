@@ -39,10 +39,6 @@ function animate_cursor() {
         cursor.style.left = events.x + 10 + "px"
         cursor.style.top = events.y + 10 + "px"
         cursor.style.padding = "5px 5px"
-        cursor.style.display = "flex"
-    })
-    main.addEventListener("mouseout", function(events) {
-        cursor.style.display = "none"
     })
 }
 
@@ -69,7 +65,6 @@ circle_content.forEach(function(content) {
     content.addEventListener("mouseenter", function() {
         cursor.style.width = "6vw"
         cursor.style.height = "6vw"
-        cursor.style.display = "flex"
         cursor.style.flexDirection = "column"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
@@ -123,7 +118,6 @@ circle_controls.forEach(function(elem) {
         var number = elem.getAttribute("number")
         cursor.style.width = "5vw"
         cursor.style.height = "5vw"
-        cursor.style.display = "flex"
         cursor.style.flexDirection = "row"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
@@ -145,7 +139,6 @@ circle_controls.forEach(function(elem) {
         var number = elem.getAttribute("number")
         cursor.style.width = "5vw"
         cursor.style.height = "5vw"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.fontSize = "1.2rem"
@@ -167,7 +160,6 @@ skill_set.forEach(function(elem) {
         var star_count = elem.getAttribute("count")
         cursor.style.height = "4vh"
         cursor.style.width = "10vw"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.color = "#fff"
@@ -291,7 +283,6 @@ duration.forEach(function(elem) {
     elem.addEventListener("mouseenter", function() {
         cursor.style.width = "10vw"
         cursor.style.height = "5vh"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.borderRadius = "0"
@@ -314,7 +305,6 @@ position.forEach(function(elem) {
     elem.addEventListener("mouseenter", function() {
         cursor.style.width = "10vw"
         cursor.style.height = "5vh"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.borderRadius = "0"
@@ -337,7 +327,6 @@ project_name.forEach(function(elem) {
     elem.addEventListener("mouseenter", function() {
         cursor.style.width = "13vw"
         cursor.style.height = "5vh"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.fontSize = "1.2rem"
@@ -361,7 +350,6 @@ responsibilities.forEach(function(elem) {
         var company_name = elem.getAttribute("company-name")
         cursor.style.width = "13vw"
         cursor.style.height = "5vh"
-        cursor.style.display = "flex"
         cursor.style.alignItems = "center"
         cursor.style.justifyContent = "center"
         cursor.style.fontSize = "1.2rem"
