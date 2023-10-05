@@ -334,7 +334,7 @@ project_name.forEach(function(elem) {
         cursor.style.letterSpacing = "0.1rem"
         cursor.style.color = "#fff"
         cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = "project name"
+        cursor.innerHTML = "project"
     })
     elem.addEventListener("mouseleave", function() {
         cursor.style.height = "30px"
