@@ -27,7 +27,7 @@
     letter-spacing: 0.2rem;
     font-size: 2vmin;
     font-weight: 500;
-    z-index: 4;
+    z-index: 99;
     color: #fff;
     transition: color ease 1s;
     text-transform: uppercase;
