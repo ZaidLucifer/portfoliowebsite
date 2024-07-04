@@ -156,6 +156,10 @@ circle_controls.forEach(function(elem) {
 
 var skill_set = document.querySelectorAll(".skills-set")
 skill_set.forEach(function(elem) {
+    var years = elem.getAttribute("years")
+    var width = Math.ceil(years) * 30;
+    elem.style.width = width+"vh";
+    console.log(width+"vh");
     elem.addEventListener("mouseenter", function() {
         var star_count = elem.getAttribute("count")
         cursor.style.height = "4vh"
@@ -176,28 +180,35 @@ skill_set.forEach(function(elem) {
     })
 })
 
+
 var tl2 = gsap.timeline({
     scrollTrigger: {
-        trigger: "#work-data",
+        trigger: ".work-datas",
         scroller: "#main",
         //markers: true,
         start: "top 100%",
-        end: "bottom 170%",
+        end: "bottom 120%",
         scrub: 3
     }
 })
 
-tl2.to("#work-data", {
-    backgroundColor: "#fff"
+tl2.from(".content", {
+    x: "-10vh"
 }, "work-data-anim")
-tl2.to(".work-data-content", {
+tl2.from(".thumbnail", {
+    x: "100%"
+}, "work-data-anim")
+tl2.from("#prev", {
+    opacity: 0
+}, "work-data-anim")
+tl2.to("#prev", {
     opacity: 1
 }, "work-data-anim")
-tl2.from(".position", {
-    x: "10vh"
+tl2.from("#next", {
+    opacity: 0
 }, "work-data-anim")
-tl2.from(".project-name", {
-    x: "-10vh"
+tl2.to("#next", {
+    opacity: 1
 }, "work-data-anim")
 
 var tl3 = gsap.timeline({
@@ -205,28 +216,22 @@ var tl3 = gsap.timeline({
         trigger: "#skills-page",
         scroller: "#main",
         //markers: true,
-        start: "top 80%",
+        start: "top 90%",
         end: "bottom 120%",
-        scrub: 3
+        scrub: 2
     }
 })
-tl3.to(".company-names-ericsson", {
-    x: -500
-}, "skills-page-anim")
-tl3.to(".company-names-nokia", {
-    x: 500
-}, "skills-page-anim")
-tl3.to(".work-data-content", {
+tl3.from(".skills-set", {
     opacity: 0
 }, "skills-page-anim")
+tl3.to(".skills-set", {
+    opacity: 1
+}, "skills-page-anim")
 tl3.from(".skills-heading", {
-    y: -180
+    opacity: 0
 }, "skills-page-anim")
-tl3.from(".skill-name", {
-    y: -100
-}, "skills-page-anim")
-tl3.from(".skill-duration", {
-    y: -100
+tl3.to(".skills-heading", {
+    opacity: 1
 }, "skills-page-anim")
 
 var tl4 = gsap.timeline({
@@ -239,12 +244,18 @@ var tl4 = gsap.timeline({
         scrub: 3
     }
 })
-tl4.to(".skill-name", {
-    y: 50
-}, "skills-page-anim")
-tl4.to(".skill-duration", {
-    y: 50
-}, "skills-page-anim")
+tl4.from(".skills-set", {
+    opacity: 1
+}, "contact-page-anim")
+tl4.from(".skills-heading", {
+    opacity: 1
+}, "contact-page-anim")
+tl4.to(".skills-set", {
+    opacity: 0
+}, "contact-page-anim")
+tl4.to(".skills-heading", {
+    opacity: 0
+}, "contact-page-anim")
 tl4.from("#contact-page", {
     backgroundColor: "#000"
 }, "contact-page-anim")
@@ -380,3 +391,44 @@ anchorLinks.forEach((anchorLink) => {
         locoScroll.scrollTo(target);
     });
 });
+
+/* work-data */
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+
+let workdataDom = document.querySelector('.work-datas');
+let SliderDom = workdataDom.querySelector('.work-datas .work-data-content');
+let thumbnailBorderDom = document.querySelector('.work-datas .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.work-data');
+let timeDom = document.querySelector('.work-datas .time');
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 800;
+
+nextDom.onclick = function(){
+    showSlider('next');    
+}
+
+prevDom.onclick = function(){
+    showSlider('prev');    
+}
+let runTimeOut;
+function showSlider(type){
+    let  SliderItemsDom = SliderDom.querySelectorAll('.work-datas .work-data-content .work-data');
+    let thumbnailItemsDom = document.querySelectorAll('.work-datas .thumbnail .work-data');
+    
+    if(type === 'next'){
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        workdataDom.classList.add('next');
+    }else{
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        workdataDom.classList.add('prev');
+    }
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        workdataDom.classList.remove('next');
+        workdataDom.classList.remove('prev');
+    }, timeRunning);
+}
