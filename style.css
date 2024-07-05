@@ -32,8 +32,9 @@
     text-shadow: 0 0.01rem 0.05rem #fff;
     transition: color ease 1s;
     text-transform: uppercase;
-    background-color: #000000;
     overflow: hidden;
+    background-color: #000;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
 }
 
 #left-navbar,
@@ -164,7 +165,6 @@
     text-shadow: 0 0.01rem 0.05rem #fff;
     background-color: #030b0f;
     background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     background-color: #030000;
 }
 
