@@ -434,8 +434,11 @@
     left: 1vw;
     right: 1vw;
 }
-.thumbnail .work-data .content .job-title{
+.thumbnail .work-data .content .thumbnail-company-name{
     font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    color: #f1683a;
 }
 .thumbnail .work-data .content .duration{
     display: grid;
@@ -445,6 +448,7 @@
     margin-top: 1vh;
     font-weight: 300;
     text-transform: capitalize;
+    letter-spacing: 0.1rem;
 }
 /* arrows */
 .arrows{
