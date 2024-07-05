@@ -183,7 +183,7 @@ skill_set.forEach(function(elem) {
 
 var tl2 = gsap.timeline({
     scrollTrigger: {
-        trigger: ".work-datas",
+        trigger: "#work-datas",
         scroller: "#main",
         //markers: true,
         start: "top 100%",
@@ -396,11 +396,11 @@ anchorLinks.forEach((anchorLink) => {
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 
-let workdataDom = document.querySelector('.work-datas');
-let SliderDom = workdataDom.querySelector('.work-datas .work-data-content');
-let thumbnailBorderDom = document.querySelector('.work-datas .thumbnail');
+let workdataDom = document.querySelector('#work-datas');
+let SliderDom = workdataDom.querySelector('#work-datas .work-data-content');
+let thumbnailBorderDom = document.querySelector('#work-datas .thumbnail');
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.work-data');
-let timeDom = document.querySelector('.work-datas .time');
+let timeDom = document.querySelector('#work-datas .time');
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 800;
@@ -414,8 +414,8 @@ prevDom.onclick = function(){
 }
 let runTimeOut;
 function showSlider(type){
-    let  SliderItemsDom = SliderDom.querySelectorAll('.work-datas .work-data-content .work-data');
-    let thumbnailItemsDom = document.querySelectorAll('.work-datas .thumbnail .work-data');
+    let  SliderItemsDom = SliderDom.querySelectorAll('#work-datas .work-data-content .work-data');
+    let thumbnailItemsDom = document.querySelectorAll('#work-datas .thumbnail .work-data');
     
     if(type === 'next'){
         SliderDom.appendChild(SliderItemsDom[0]);
