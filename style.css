@@ -222,6 +222,7 @@
     color: #000;
     border: 0.5vw solid #000;
     background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
 }
 
 .scroll-div h2 {
@@ -286,9 +287,17 @@
     transition: color ease 1s;
 }
 
+.about-me-left-center .current_desg {
+    color:#f1683a
+}
+
 .about-me-left-center .about-me-name:hover,
-.about-me-left-center h3:hover {
+.about-me-left-center .detail:hover {
     color: #f1683a
+}
+
+.about-me-left-center .current_desg:hover {
+    color:#fff
 }
 
 @media (max-width: 1160px){
@@ -667,7 +676,7 @@
     border-radius: 10vh;
     /*background-image: url("images/galaxy.jpg");
     background-size: cover;*/
-    background-color: #a5a5a5;
+    background-color: #fff;
     background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
     transition: all 1s ease;
 }
@@ -696,7 +705,7 @@
     align-items: center;
     justify-content: center;
     color: #000;
-    background-color: #a5a5a5;
+    background-color: #fff;
     background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
 }
 
