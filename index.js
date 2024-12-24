@@ -157,8 +157,10 @@ circle_controls.forEach(function(elem) {
 var skill_set = document.querySelectorAll(".skills-set")
 skill_set.forEach(function(elem) {
     var years = elem.getAttribute("years")
-    var width = Math.ceil(years) * 30;
-    elem.style.width = width+"vh";
+    var minYears = 1;
+    var maxYears = 8;
+    var width = ((years - minYears) / (maxYears - minYears)) * 100;
+    elem.style.width = width+"vw";
     console.log(width+"vh");
     elem.addEventListener("mouseenter", function() {
         var star_count = elem.getAttribute("count")
@@ -289,94 +291,94 @@ company_names.forEach(function(company) {
 })
 
 
-var duration = document.querySelectorAll(".duration")
-duration.forEach(function(elem) {
-    elem.addEventListener("mouseenter", function() {
-        cursor.style.width = "10vw"
-        cursor.style.height = "5vh"
-        cursor.style.alignItems = "center"
-        cursor.style.justifyContent = "center"
-        cursor.style.borderRadius = "0"
-        cursor.style.fontSize = "1.2rem"
-        cursor.style.letterSpacing = "0.1rem"
-        cursor.style.color = "#fff"
-        cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = "duration"
-    })
-    elem.addEventListener("mouseleave", function() {
-        cursor.style.height = "30px"
-        cursor.style.width = "30px"
-        cursor.style.borderRadius = "50%"
-        cursor.innerHTML = ""
-    })
-})
+// var duration = document.querySelectorAll(".duration")
+// duration.forEach(function(elem) {
+//     elem.addEventListener("mouseenter", function() {
+//         cursor.style.width = "10vw"
+//         cursor.style.height = "5vh"
+//         cursor.style.alignItems = "center"
+//         cursor.style.justifyContent = "center"
+//         cursor.style.borderRadius = "0"
+//         cursor.style.fontSize = "1.2rem"
+//         cursor.style.letterSpacing = "0.1rem"
+//         cursor.style.color = "#fff"
+//         cursor.style.textTransform = "uppercase"
+//         cursor.innerHTML = "duration"
+//     })
+//     elem.addEventListener("mouseleave", function() {
+//         cursor.style.height = "30px"
+//         cursor.style.width = "30px"
+//         cursor.style.borderRadius = "50%"
+//         cursor.innerHTML = ""
+//     })
+// })
 
-var position = document.querySelectorAll(".position")
-position.forEach(function(elem) {
-    elem.addEventListener("mouseenter", function() {
-        cursor.style.width = "10vw"
-        cursor.style.height = "5vh"
-        cursor.style.alignItems = "center"
-        cursor.style.justifyContent = "center"
-        cursor.style.borderRadius = "0"
-        cursor.style.fontSize = "1.2rem"
-        cursor.style.letterSpacing = "0.1rem"
-        cursor.style.color = "#fff"
-        cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = "position"
-    })
-    elem.addEventListener("mouseleave", function() {
-        cursor.style.height = "30px"
-        cursor.style.width = "30px"
-        cursor.style.borderRadius = "50%"
-        cursor.innerHTML = ""
-    })
-})
+// var position = document.querySelectorAll(".position")
+// position.forEach(function(elem) {
+//     elem.addEventListener("mouseenter", function() {
+//         cursor.style.width = "10vw"
+//         cursor.style.height = "5vh"
+//         cursor.style.alignItems = "center"
+//         cursor.style.justifyContent = "center"
+//         cursor.style.borderRadius = "0"
+//         cursor.style.fontSize = "1.2rem"
+//         cursor.style.letterSpacing = "0.1rem"
+//         cursor.style.color = "#fff"
+//         cursor.style.textTransform = "uppercase"
+//         cursor.innerHTML = "position"
+//     })
+//     elem.addEventListener("mouseleave", function() {
+//         cursor.style.height = "30px"
+//         cursor.style.width = "30px"
+//         cursor.style.borderRadius = "50%"
+//         cursor.innerHTML = ""
+//     })
+// })
 
-var project_name = document.querySelectorAll(".project-name")
-project_name.forEach(function(elem) {
-    elem.addEventListener("mouseenter", function() {
-        cursor.style.width = "13vw"
-        cursor.style.height = "5vh"
-        cursor.style.alignItems = "center"
-        cursor.style.justifyContent = "center"
-        cursor.style.fontSize = "1.2rem"
-        cursor.style.borderRadius = "0"
-        cursor.style.letterSpacing = "0.1rem"
-        cursor.style.color = "#fff"
-        cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = "project"
-    })
-    elem.addEventListener("mouseleave", function() {
-        cursor.style.height = "30px"
-        cursor.style.width = "30px"
-        cursor.style.borderRadius = "50%"
-        cursor.innerHTML = ""
-    })
-})
+// var project_name = document.querySelectorAll(".project-name")
+// project_name.forEach(function(elem) {
+//     elem.addEventListener("mouseenter", function() {
+//         cursor.style.width = "13vw"
+//         cursor.style.height = "5vh"
+//         cursor.style.alignItems = "center"
+//         cursor.style.justifyContent = "center"
+//         cursor.style.fontSize = "1.2rem"
+//         cursor.style.borderRadius = "0"
+//         cursor.style.letterSpacing = "0.1rem"
+//         cursor.style.color = "#fff"
+//         cursor.style.textTransform = "uppercase"
+//         cursor.innerHTML = "project"
+//     })
+//     elem.addEventListener("mouseleave", function() {
+//         cursor.style.height = "30px"
+//         cursor.style.width = "30px"
+//         cursor.style.borderRadius = "50%"
+//         cursor.innerHTML = ""
+//     })
+// })
 
-var responsibilities = document.querySelectorAll(".responsibilities")
-responsibilities.forEach(function(elem) {
-    elem.addEventListener("mouseenter", function() {
-        var company_name = elem.getAttribute("company-name")
-        cursor.style.width = "13vw"
-        cursor.style.height = "5vh"
-        cursor.style.alignItems = "center"
-        cursor.style.justifyContent = "center"
-        cursor.style.fontSize = "1.2rem"
-        cursor.style.borderRadius = "0"
-        cursor.style.letterSpacing = "0.1rem"
-        cursor.style.color = "#fff"
-        cursor.style.textTransform = "uppercase"
-        cursor.innerHTML = company_name
-    })
-    elem.addEventListener("mouseleave", function() {
-        cursor.style.height = "30px"
-        cursor.style.width = "30px"
-        cursor.style.borderRadius = "50%"
-        cursor.innerHTML = ""
-    })
-})
+// var responsibilities = document.querySelectorAll(".responsibilities")
+// responsibilities.forEach(function(elem) {
+//     elem.addEventListener("mouseenter", function() {
+//         var company_name = elem.getAttribute("company-name")
+//         cursor.style.width = "13vw"
+//         cursor.style.height = "5vh"
+//         cursor.style.alignItems = "center"
+//         cursor.style.justifyContent = "center"
+//         cursor.style.fontSize = "1.2rem"
+//         cursor.style.borderRadius = "0"
+//         cursor.style.letterSpacing = "0.1rem"
+//         cursor.style.color = "#fff"
+//         cursor.style.textTransform = "uppercase"
+//         cursor.innerHTML = company_name
+//     })
+//     elem.addEventListener("mouseleave", function() {
+//         cursor.style.height = "30px"
+//         cursor.style.width = "30px"
+//         cursor.style.borderRadius = "50%"
+//         cursor.innerHTML = ""
+//     })
+// })
 
 const anchorLinks = document.querySelectorAll('a[href^=\\#]:not([href$=\\#])');
 
